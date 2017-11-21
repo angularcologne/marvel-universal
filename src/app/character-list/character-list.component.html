@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-12">
+        <input type="text">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+
+        <div class="character-list">
+            <div *ngFor="let character of (characters$ | async)" class="characterSummary"
+                 (click)="select(character.id)">
+                <app-image [image]="character.thumbnail" class="thumbnail"></app-image>
+                {{character.name}}
+            </div>
+        </div>
+        <div *ngIf="selectedCharacter" class="right">
+            <h1>{{selectedCharacter.name}}</h1>
+            <app-image [image]="selectedCharacter.thumbnail"></app-image>
+            <span>{{selectedCharacter.description}}</span>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .thumbnail {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+  }
+
+  .characterSummary {
+    margin: 5px;
+  }
+
+  .right {
+    min-width: calc(100% - 790px);
+    padding: 0 20px;
+  }
+
+}
+

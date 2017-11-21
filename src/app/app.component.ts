@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/mergeMap';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/concat';
+import 'rxjs/add/operator/merge';
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <h1>Universal Demo using Angular and Angular CLI</h1>
-  <a routerLink="/">Home</a>
-  <a routerLink="/lazy">Lazy</a>
-  <a routerLink="/lazy/nested">Lazy_Nested</a>
-  <router-outlet></router-outlet>
-  `,
-  styles: []
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title = 'app works!';
 }
