@@ -1,4 +1,4 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
@@ -18,6 +18,7 @@ import {HttpModule} from "@angular/http";
     imports: [
         HttpModule,
         BrowserModule.withServerTransition({appId: 'my-app'}),
+        BrowserTransferStateModule,
         RouterModule.forRoot([
             {path: '', component: AppComponent, pathMatch: 'full'},
             //    { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
