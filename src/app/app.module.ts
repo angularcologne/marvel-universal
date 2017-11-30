@@ -8,21 +8,23 @@ import {CharacterCardComponent} from "./character-card/character-card.component"
 import {ImageComponent} from "./image/image.component";
 import {CharacterService} from "./services/character.service";
 import {HttpModule} from "@angular/http";
+import {CharacterDetailComponent} from './character-detail/character-detail.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         CharacterListComponent,
         CharacterCardComponent,
+        CharacterListComponent,
         ImageComponent],
     imports: [
         HttpModule,
         BrowserModule.withServerTransition({appId: 'my-app'}),
         BrowserTransferStateModule,
         RouterModule.forRoot([
-            {path: '', component: AppComponent, pathMatch: 'full'},
+            { path: 'character', loadChildren: './character-detail/character-detail.module#CharacterDetailModule'},
             //    { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-            //    { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
+            {path: ':id', component: CharacterListComponent, pathMatch: 'full'}
         ])
     ],
     providers: [CharacterService],
