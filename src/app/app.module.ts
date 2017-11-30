@@ -22,9 +22,9 @@ import {CharacterDetailComponent} from './character-detail/character-detail.comp
         BrowserModule.withServerTransition({appId: 'my-app'}),
         BrowserTransferStateModule,
         RouterModule.forRoot([
-            { path: 'character', loadChildren: './character-detail/character-detail.module#CharacterDetailModule'},
+            { path: 'character/:id', loadChildren: './character-detail/character-detail.module#CharacterDetailModule'},
             //    { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-            {path: ':id', component: CharacterListComponent, pathMatch: 'full'}
+            {path: '', component: CharacterListComponent, pathMatch: 'full'}
         ])
     ],
     providers: [CharacterService],
